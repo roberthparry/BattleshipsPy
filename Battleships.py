@@ -1,15 +1,17 @@
 from FiringResult import FiringResult
 from GameBoard import GameBoard
 
-if __name__ == '__main__':
+
+def main() -> int:
     board = GameBoard()
     board.set_up()
     while True:
         board.print()
-        cell_reference = input("Enter cell to fire at (e.g. A1, B1, ...) or q to quit: ")
+        cell_reference = input(
+            "Enter cell to fire at (e.g. A1, B1, ...) or q to quit: ")
         if cell_reference == "q" or cell_reference == "Q":
             print("Bye!")
-            exit()
+            return 0
         (row, column) = GameBoard.translate_cell_reference(cell_reference)
         if row == -1:
             print("'", cell_reference, "' is not a valid cell.", sep="")
@@ -25,3 +27,8 @@ if __name__ == '__main__':
             break
     board.print()
     print("Congratulations, you Won!")
+    return 0
+
+
+if __name__ == '__main__':
+    main()

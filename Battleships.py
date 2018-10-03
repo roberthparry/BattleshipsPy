@@ -2,7 +2,7 @@ from FiringResult import FiringResult
 from GameBoard import GameBoard
 
 
-def main() -> int:
+def main():
     board = GameBoard()
     board.set_up()
     while True:
@@ -11,7 +11,7 @@ def main() -> int:
             "Enter cell to fire at (e.g. A1, B1, ...) or q to quit: ")
         if cell_reference == "q" or cell_reference == "Q":
             print("Bye!")
-            return 0
+            return
         (row, column) = GameBoard.translate_cell_reference(cell_reference)
         if row == -1:
             print("'", cell_reference, "' is not a valid cell.", sep="")
@@ -27,7 +27,6 @@ def main() -> int:
             break
     board.print()
     print("Congratulations, you Won!")
-    return 0
 
 
 if __name__ == '__main__':

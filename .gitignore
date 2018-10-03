@@ -1,0 +1,12 @@
+
+*.iml
+
+*.xml
+
+__pycache__/
+
+venv/bin/
+
+venv/lib/python3\.6/site-packages/
+
+venv/
